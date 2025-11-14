@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
-    GameObject ParentObj;
+    public GameObject ParentObj;
     GameObject PopUp;
     public GameObject PlayerObj;
 

@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour
     public GameObject CurrentInteractable;
 
     // private variables
-    private Vector2 MoveVal;
+    Vector2 MoveVal;
+    UIController uiController;
 
     void FixedUpdate()
     {
@@ -23,8 +24,14 @@ public class PlayerController : MonoBehaviour
     void OnInteract()
     {
         Debug.Log("Interacted");
-        CurrentInteractable.GetComponent<Door>().Use();
+        CurrentInteractable.GetComponent<Interactable>().Use();
     }
+
+    void OnInventory() 
+    {
+
+    }
+
 
 
 }
