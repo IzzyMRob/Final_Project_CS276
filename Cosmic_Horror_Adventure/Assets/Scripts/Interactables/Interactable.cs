@@ -4,12 +4,13 @@ public abstract class Interactable : MonoBehaviour
 {
     GameObject ParentObj;
     GameObject PopUp;
+    public GameObject PlayerObj;
 
     void Start()
     {
         // grab pop-up object
-        DoorObj = gameObject;
-        PopUp = DoorObj.transform.GetChild(0).gameObject;
+        ParentObj = gameObject;
+        PopUp = ParentObj.transform.GetChild(0).gameObject;
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -18,7 +19,8 @@ public abstract class Interactable : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             PopUp.SetActive(true);
-            collider.PlayerController.CurrentInteractable = DoorObj;
+            PlayerObj = collider.gameObject;
+            PlayerObj.GetComponent<PlayerController>().CurrentInteractable = ParentObj;
         }
 
     }
@@ -29,6 +31,7 @@ public abstract class Interactable : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             PopUp.SetActive(false);
+            PlayerObj.GetComponent<PlayerController>().CurrentInteractable = null;
         }
 
     }

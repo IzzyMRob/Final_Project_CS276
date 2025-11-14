@@ -20,5 +20,11 @@ public class PlayerController : MonoBehaviour
         MoveVal = input.Get<Vector2>();
     }
 
+    void OnInteract()
+    {
+        Debug.Log("Interacted");
+        CurrentInteractable.GetComponent<Door>().Use();
+    }
+
 
 }
