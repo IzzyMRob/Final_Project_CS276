@@ -8,7 +8,7 @@
 ## Game Overview
 In 1976 Will Crowther created the game Colossal Cave Adventure, also known as Adventure. This was one of the first text-based games ever created, and it pioneered the genre of "adventure" games.
 
-In 2024 I re-created the functionality of this game for her final project in CS 151 at Willamette University under Professor Rembold. I also created my own story to go with it, chosing a Sci-Fi Horror theme instead of the original fantasy one.
+In 2024 I re-created the functionality of this game for her final project in CS 151 at Willamette University. I also created my own story to go with it, chosing a Sci-Fi Horror theme instead of the original fantasy one.
 
 Now, I am working on turning my version of this game from a text-based implementation to a 2D one.
 
