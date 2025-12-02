@@ -26,7 +26,7 @@ Base:
 
 - [X] Player Movement
 - [X] Doorways Created
-- [ ] Doorways Require Objects
+- [X] Doorways Require Objects
 - [X] Collectable Objects
 - [X] Entire Map Created
 - [X] Player Animations
