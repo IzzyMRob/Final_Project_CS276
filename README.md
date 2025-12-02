@@ -25,11 +25,15 @@ Now, I am working on turning my version of this game from a text-based implement
 Base:
 
 - [X] Player Movement
-- [X] Environment Interactions
-- [ ] Multiple Locations
+- [X] Doorways Created
+- [ ] Doorways Require Objects
+- [X] Collectable Objects
+- [X] Entire Map Created
+- [X] Player Animations
+- [ ] Starting Story
+- [ ] Pause Menu
 - [ ] Inventory Menu
-- [ ] NPC Conversations
-- [ ] Artwork + Aimations
+- [ ] Artwork
 - [ ] Sounds
 
 ### Known Bugs
@@ -55,3 +59,4 @@ Base:
 **Learning Outcomes**:
 
 ## Development Notes
+- 
