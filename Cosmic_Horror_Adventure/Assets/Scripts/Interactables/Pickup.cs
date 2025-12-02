@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Pickup : Interactable
 {
@@ -9,6 +10,8 @@ public class Pickup : Interactable
     {
         // remove object from world, add to player inventory
         PlayerObj.GetComponent<PlayerInventory>().Add(Name, sprite);
-        Destroy(ParentObj);
+        Destroy(gameObject);
     }
+
+    public override void GetSpecificValues() {}
 }

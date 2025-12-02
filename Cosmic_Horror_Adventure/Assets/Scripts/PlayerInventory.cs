@@ -22,4 +22,14 @@ public class PlayerInventory : MonoBehaviour
         HeldItems.Remove(name);
     }
 
+    public bool IsHolding(string name) 
+    {
+        if (HeldItems.ContainsKey(name)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
 }

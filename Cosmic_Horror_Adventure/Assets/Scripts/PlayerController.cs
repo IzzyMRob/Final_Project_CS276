@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     void Start() {
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        uiController = GetComponent<UIController>();
     }
 
     void FixedUpdate()
@@ -48,13 +49,18 @@ public class PlayerController : MonoBehaviour
 
     void OnInteract()
     {
-        Debug.Log("Interacted");
         CurrentInteractable.GetComponent<Interactable>().Use();
+    }
+
+    public void SetCurrentInteractable(GameObject NewInteractable)
+    {
+        CurrentInteractable = NewInteractable;
     }
 
     void OnInventory() 
     {
-
+        Debug.Log("Inventory called");
+        uiController.ToggleInventory();
     }
 
 

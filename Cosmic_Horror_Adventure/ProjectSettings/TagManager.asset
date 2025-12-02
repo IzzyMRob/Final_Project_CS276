@@ -57,6 +57,9 @@ TagManager:
   - name: Player
     uniqueID: 132808275
     locked: 0
+  - name: Pop-Up
+    uniqueID: 3303834973
+    locked: 0
   m_RenderingLayers:
   - Default
   - Floor
