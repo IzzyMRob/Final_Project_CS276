@@ -1,4 +1,4 @@
-# Cosmic Horror Adventure (Better name pending)
+# Space Vulture
 
 ## Play the Game
 **Unity Play Link:** https://play.unity.com/en/games/ccf3a793-8eb5-44e1-89e0-54275d17c038/cosmic-horror-adventure
@@ -25,11 +25,15 @@ Now, I am working on turning my version of this game from a text-based implement
 Base:
 
 - [X] Player Movement
-- [X] Environment Interactions
-- [ ] Multiple Locations
+- [X] Doorways Created
+- [X] Doorways Require Objects
+- [X] Collectable Objects
+- [X] Entire Map Created
+- [X] Player Animations
+- [ ] Starting Story
+- [ ] Pause Menu
 - [ ] Inventory Menu
-- [ ] NPC Conversations
-- [ ] Artwork + Aimations
+- [ ] Artwork
 - [ ] Sounds
 
 ### Known Bugs
@@ -55,3 +59,4 @@ Base:
 **Learning Outcomes**:
 
 ## Development Notes
+- 
