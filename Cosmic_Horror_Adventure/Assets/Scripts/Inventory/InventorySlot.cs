@@ -15,20 +15,26 @@ namespace Assets.WUG.Scripts
     {
         public Image Icon;
         public string ItemGuid = "";
+        public Image ItemImage;
 
         public InventorySlot()
         {
             //Create a new Image element and add it to the root
             Icon = new Image();
+            ItemImage = new Image();
             Add(Icon);
+            Add(ItemImage);
 
             //Add USS style properties to the elements
+            ItemImage.AddToClassList("itemImage");
             Icon.AddToClassList("slotIcon");
             AddToClassList("slotContainer");
         }
 
         public void HoldItem(string name, Sprite sprite)
         {
+            Icon = new Image();
+            Add(Icon);
             Debug.Log(name);
             Debug.Log(sprite);
             Icon.image = sprite.texture;

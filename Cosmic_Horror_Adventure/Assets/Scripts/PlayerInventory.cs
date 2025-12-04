@@ -17,7 +17,6 @@ public class PlayerInventory : MonoBehaviour
     public void Add(string name, Sprite sprite)
     {
         HeldItems.Add(name, sprite);
-        InventoryUIController.PopulateInventory();
     }
 
     public bool IsHolding(string name) 
