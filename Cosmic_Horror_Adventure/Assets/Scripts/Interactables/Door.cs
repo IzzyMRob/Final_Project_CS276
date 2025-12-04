@@ -28,11 +28,18 @@ public class Door : Interactable
         }
     }
 
+    public override void ProximityTurnOff()
+    {
+        NoMessage.SetActive(false);
+    }
+
     IEnumerator ShowNoMessage()
     {
         NoMessage.SetActive(true);
         yield return new WaitForSeconds(5); // Wait for 3 seconds
         NoMessage.SetActive(false);
     }
+
+
 
 }

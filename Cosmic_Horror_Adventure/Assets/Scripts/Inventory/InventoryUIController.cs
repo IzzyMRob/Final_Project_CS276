@@ -36,12 +36,17 @@ namespace Assets.WUG.Scripts
 
         public void AddToInventory(string name, Sprite sprite)
         {
-            // repopulate with held items
-                print(name);
-                print(sprite);
-                var emptySlot = InventoryItems[CurrentSlot];
-                emptySlot.HoldItem(name, sprite);
-                CurrentSlot ++;
+            for (int i = 0; i < numSlots; i++)
+            {
+                InventorySlot item = new InventorySlot();
+                InventoryItems.Add(item);
+                m_SlotContainer.Add(item);
+            }
+            print(name);
+            print(sprite);
+            var emptySlot = InventoryItems[CurrentSlot];
+            emptySlot.HoldItem(name, sprite);
+            CurrentSlot ++;
         }
     }
 }

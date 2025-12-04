@@ -14,4 +14,5 @@ public class Pickup : Interactable
     }
 
     public override void GetSpecificValues() {}
+    public override void ProximityTurnOff() {}
 }

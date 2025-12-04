@@ -32,11 +32,13 @@ public abstract class Interactable : MonoBehaviour
         {
             PopUp.SetActive(false);
             PlayerObj.GetComponent<PlayerController>().CurrentInteractable = null;
+            ProximityTurnOff();
         }
 
     }
 
     public abstract void Use();
     public abstract void GetSpecificValues();
+    public abstract void ProximityTurnOff();
 
 }
