@@ -19,8 +19,8 @@ Now, I am working on turning my version of this game from a text-based implement
 - Use ESC to pause the game
 
 ### How to Play
-Welcome to Cosmic Adventure! You are a lone scavenger exploring an abandoned freighter in hopes of finding a wealth of credits, though it is rumored that this ship met a deadly fate.
-This place is said to be perilous, the perfect oppurtunity for a daring explorer like you to loot. 
+Welcome to Space Vulture! You are a lone scavenger exploring an abandoned freighter in hopes of finding a wealth of credits, though it is rumored that this ship met a deadly fate.
+This place is said to be perilous, the perfect opportunity for a daring explorer like you to loot. 
 It's important to remember that freighter passages turn a lot, and that leaving a room to the north does not guarantee entering the next from the south, although it often works out that way. 
 You'd best make yourself a map as you go along.
 
