@@ -27,10 +27,12 @@ namespace Assets.WUG.Scripts
             AddToClassList("slotContainer");
         }
 
-        public void HoldItem(string key, Sprite value)
+        public void HoldItem(string name, Sprite sprite)
         {
-            Icon.image = value.texture;
-            ItemGuid = key;
+            Debug.Log(name);
+            Debug.Log(sprite);
+            Icon.image = sprite.texture;
+            ItemGuid = name;
         }
     }
 }

@@ -8,13 +8,8 @@ using UnityEngine.InputSystem;
 public class UIController : MonoBehaviour
 {
     public GameObject Canvas;
+    public GameObject UI;
     bool Active;
-
-    void Start()
-    {
-        Canvas.SetActive(true);
-        Canvas.SetActive(false);
-    }
 
     public void ToggleInventory()
     {
@@ -28,8 +23,8 @@ public class UIController : MonoBehaviour
         else {
             Active = true;
             Canvas.SetActive(true);
+            UI.GetComponent<InventoryUIController>().Awake();
             Time.timeScale = 0;
         }
     }
-
 }

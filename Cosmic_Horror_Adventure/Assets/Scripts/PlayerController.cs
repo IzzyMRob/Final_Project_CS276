@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     // Public Variables
     public float MoveSpeed = 5f;
     public GameObject CurrentInteractable;
+    public GameObject UIControllerGO;
 
     // private variables
     Vector2 MoveVal;
@@ -16,7 +17,7 @@ public class PlayerController : MonoBehaviour
     void Start() {
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        uiController = GetComponent<UIController>();
+        uiController = UIControllerGO.GetComponent<UIController>();
     }
 
     void FixedUpdate()
@@ -52,15 +53,14 @@ public class PlayerController : MonoBehaviour
         CurrentInteractable.GetComponent<Interactable>().Use();
     }
 
+    void OnInventory() 
+    {
+        uiController.ToggleInventory();
+    }
+
     public void SetCurrentInteractable(GameObject NewInteractable)
     {
         CurrentInteractable = NewInteractable;
-    }
-
-    void OnInventory() 
-    {
-        Debug.Log("Inventory called");
-        uiController.ToggleInventory();
     }
 
 

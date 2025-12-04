@@ -12,15 +12,16 @@ namespace Assets.WUG.Scripts
     public class InventoryUIController : MonoBehaviour
     {
         public List<InventorySlot> InventoryItems = new List<InventorySlot>();
+        public GameObject PlayerObj;
         private VisualElement m_Root;
         private VisualElement m_SlotContainer;
         private int numSlots = 24;
-        private int CurrentSlot = 0;
 
-        private void Awake()
+        public void Awake()
         {
             //Store the root from the UI Document component
             m_Root = GetComponent<UIDocument>().rootVisualElement;
+            Debug.Log("Awake called");
 
             //Search the root for the SlotContainer Visual Element
             m_SlotContainer = m_Root.Q<VisualElement>("SlotContainer");
@@ -32,21 +33,21 @@ namespace Assets.WUG.Scripts
                 InventoryItems.Add(item);
                 m_SlotContainer.Add(item);
             }
+
+            PopulateInventory();
         }        
 
-        public void AddToInventory(string name, Sprite sprite)
+        public void PopulateInventory()
         {
-            for (int i = 0; i < numSlots; i++)
+            Debug.Log(PlayerObj.GetComponent<PlayerInventory>().HeldItems.Count);
+            foreach (var (name, sprite) in PlayerObj.GetComponent<PlayerInventory>().HeldItems)
             {
-                InventorySlot item = new InventorySlot();
-                InventoryItems.Add(item);
-                m_SlotContainer.Add(item);
+                var emptySlot = InventoryItems.FirstOrDefault(x => x.ItemGuid.Equals(""));
+                if (emptySlot != null) {
+                    Debug.Log(emptySlot);
+                    emptySlot.HoldItem(name, sprite);
+                }
             }
-            print(name);
-            print(sprite);
-            var emptySlot = InventoryItems[CurrentSlot];
-            emptySlot.HoldItem(name, sprite);
-            CurrentSlot ++;
         }
     }
 }
