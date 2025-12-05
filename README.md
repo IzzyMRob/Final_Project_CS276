@@ -8,7 +8,7 @@
 ## Game Overview
 In 1976 Will Crowther created the game Colossal Cave Adventure, also known as Adventure. This was one of the first text-based games ever created, and it pioneered the genre of "adventure" games.
 
-In 2024 I re-created the functionality of this game for her final project in CS 151 at Willamette University. I also created my own story to go with it, chosing a Sci-Fi Horror theme instead of the original fantasy one.
+In 2024 I re-created the functionality of this game for my final project in CS 151 at Willamette University. I also created my own story to go with it, chosing a Sci-Fi Horror theme instead of the original fantasy one.
 
 Now, I am working on turning my version of this game from a text-based implementation to a 2D one. The game is focused on exploration and learning things about your environment, rather than combat like many modern games. 
 
@@ -57,7 +57,7 @@ Base:
 
 ### Credits
 - Implementation:
-  - Followed Tutorial for Inventory UI: https://github.com/Yecats/GameDevTutorials/tree/master/tutorials/Unity/Create-an-Inventory-UI-with%20UI-Toolkit
+  - Partially Followed Tutorial for Inventory UI: https://github.com/Yecats/GameDevTutorials/tree/master/tutorials/Unity/Create-an-Inventory-UI-with%20UI-Toolkit
 - Audio
   - TBD
 - Visual
@@ -67,8 +67,9 @@ Base:
 **Successes**:
 
 **Challenges**: 
-- Getting the Inventory UI to display the Item Slots, for some reason every time after the first time I toggle it on or off it doesn't appear.
-- Creating my own assets. While I do love doing this part is greatly increases the effort I am putting in to the game.
+- Getting the Inventory UI to display the Item Slots, it was removing the boxes each time I set it active/inactiv.
+- Getting the inventory boxes to populate with Item sprites was also difficult, 
+- Creating my own assets. While I do love doing this part it greatly increases the effort I am putting in to the game.
 
 **Learning Outcomes**:
 - I feel a lot more confident in creating more complicated internal game systems now. Before I was keeping everything very simple, but the Items and Doors especially in this project forced me out of my comfort zone.
