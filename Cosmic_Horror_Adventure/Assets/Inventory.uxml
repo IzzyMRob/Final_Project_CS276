@@ -3,7 +3,7 @@
     <ui:VisualElement name="Container" class="container">
         <ui:VisualElement name="Inventory" class="inventory">
             <ui:Label text="Inventory" name="Header" class="header" />
-            <ui:VisualElement name="SlotContainer" class="slotContainer" style="flex-direction: row; flex-wrap: wrap; justify-content: center;" />
+            <ui:VisualElement name="SlotContainer" class="slotContainer" style="flex-direction: row; flex-wrap: wrap; justify-content: center; align-content: stretch; background-color: rgb(28, 32, 36);" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

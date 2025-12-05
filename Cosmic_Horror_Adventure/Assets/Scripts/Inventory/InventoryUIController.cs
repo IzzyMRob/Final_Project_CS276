@@ -16,35 +16,80 @@ namespace Assets.WUG.Scripts
         private VisualElement m_Root;
         private VisualElement m_SlotContainer;
         private int numSlots = 24;
+        private bool slotsCreated = false;
 
         public void Awake()
         {
-            //Store the root from the UI Document component
-            m_Root = GetComponent<UIDocument>().rootVisualElement;
-            Debug.Log("Awake called");
+            CreateSlots();
+        }
 
-            //Search the root for the SlotContainer Visual Element
-            m_SlotContainer = m_Root.Q<VisualElement>("SlotContainer");
+        private void OnEnable()
+        {
+            // Re-setup the UI elements when Canvas is enabled
+            PopulateInventory();
+            SetupUIElements();
+        }
 
-            //Create 20 InventorySlots and add them as children to the SlotContainer
+        private void CreateSlots()
+        {
+            if (slotsCreated)
+                return;
+
+            // Create InventorySlots
             for (int i = 0; i < numSlots; i++)
             {
                 InventorySlot item = new InventorySlot();
                 InventoryItems.Add(item);
-                m_SlotContainer.Add(item);
             }
 
-            PopulateInventory();
+            slotsCreated = true;
+            Debug.Log("Slots created");
+        }
+
+        private void SetupUIElements()
+        {
+            // Store the root from the UI Document component
+            m_Root = GetComponent<UIDocument>().rootVisualElement;
+
+            // Search the root for the SlotContainer Visual Element
+            m_SlotContainer = m_Root.Q<VisualElement>("SlotContainer");
+
+            // Clear the container first
+            m_SlotContainer.Clear();
+
+            // Add all inventory slots to the container
+            foreach (var slot in InventoryItems)
+            {
+                if (slot.ItemGuid != "") {
+                    m_SlotContainer.Add(slot);
+                }
+            }
+
+            Debug.Log("UI Elements setup complete");
         }       
 
         public void PopulateInventory()
         {
-            Debug.Log(PlayerObj.GetComponent<PlayerInventory>().HeldItems.Count);
-            foreach (var (name, sprite) in PlayerObj.GetComponent<PlayerInventory>().HeldItems)
+            // Make sure slots are created
+            if (!slotsCreated)
+            {
+                CreateSlots();
+            }
+
+            // Clear all slots first when repopulating
+            foreach (var slot in InventoryItems)
+            {
+                slot.ClearItem();
+            }
+
+            var heldItems = PlayerObj.GetComponent<PlayerInventory>().HeldItems;
+            Debug.Log($"Populating {heldItems.Count} items into inventory UI");
+            
+            foreach (var (name, sprite) in heldItems)
             {
                 var emptySlot = InventoryItems.FirstOrDefault(x => x.ItemGuid.Equals(""));
                 if (emptySlot != null) {
-                    Debug.Log(emptySlot);
+                    Debug.Log($"Adding item to slot: {name}");
                     emptySlot.HoldItem(name, sprite);
                 }
             }

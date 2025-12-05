@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cfc5dc8a63674a04683fac172029abb8
+guid: a9572cff670c06f4084c6d124ee96daa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2913809264036507544
-    second: BottomRightCap_0
+      213: 6294437274706557265
+    second: BottomRightCapOuter_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,24 +96,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BottomRightCap_0
+      name: BottomRightCapOuter_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8609cd199e11097d0800000000000000
-      internalID: -2913809264036507544
+      spriteID: 159bcdb1a555a5750800000000000000
+      internalID: 6294437274706557265
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BottomRightCap_0: -2913809264036507544
+      BottomRightCapOuter_0: 6294437274706557265
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
