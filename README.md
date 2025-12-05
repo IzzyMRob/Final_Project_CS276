@@ -13,10 +13,10 @@ In 2024 I re-created the functionality of this game for my final project in CS 1
 Now, I am working on turning my version of this game from a text-based implementation to a 2D one. The game is focused on exploration and learning things about your environment, rather than combat like many modern games. 
 
 ### Controls
-- Use WASD to move up/down/left/right
-- Use E to interact with your environment
-- Use TAB to open the inventory menu
-- Use ESC to pause the game
+- WSAD to move up/down/left/right
+- E to interact with your environment
+- TAB to open the inventory menu
+- ESC to pause the game
 
 ### How to Play
 Welcome to Space Vulture! You are a lone scavenger exploring an abandoned freighter in hopes of finding a wealth of credits, though it is rumored that this ship met a deadly fate.
