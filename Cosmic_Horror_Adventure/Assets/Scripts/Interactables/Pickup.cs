@@ -5,11 +5,13 @@ public class Pickup : Interactable
 {
     public string Name;
     public Sprite sprite;
+    public int value;
 
     public override void Use()
     {
         // remove object from world, add to player inventory
-        PlayerObj.GetComponent<PlayerInventory>().Add(Name, sprite);
+        Debug.Log(value);
+        PlayerObj.GetComponent<PlayerInventory>().Add(Name, sprite, value);
         Destroy(gameObject);
     }
 

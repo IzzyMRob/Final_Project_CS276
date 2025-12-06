@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         uiController = UIControllerGO.GetComponent<UIController>();
+        CurrentInteractable = null;
     }
 
     void FixedUpdate()
@@ -56,6 +57,11 @@ public class PlayerController : MonoBehaviour
     void OnInventory() 
     {
         uiController.ToggleInventory();
+    }
+
+    void OnPause()
+    {
+        uiController.TogglePause();
     }
 
     public void SetCurrentInteractable(GameObject NewInteractable)

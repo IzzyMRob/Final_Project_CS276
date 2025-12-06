@@ -43,7 +43,6 @@ namespace Assets.WUG.Scripts
             }
 
             slotsCreated = true;
-            Debug.Log("Slots created");
         }
 
         private void SetupUIElements()
@@ -65,7 +64,6 @@ namespace Assets.WUG.Scripts
                 }
             }
 
-            Debug.Log("UI Elements setup complete");
         }       
 
         public void PopulateInventory()
@@ -83,13 +81,11 @@ namespace Assets.WUG.Scripts
             }
 
             var heldItems = PlayerObj.GetComponent<PlayerInventory>().HeldItems;
-            Debug.Log($"Populating {heldItems.Count} items into inventory UI");
             
             foreach (var (name, sprite) in heldItems)
             {
                 var emptySlot = InventoryItems.FirstOrDefault(x => x.ItemGuid.Equals(""));
                 if (emptySlot != null) {
-                    Debug.Log($"Adding item to slot: {name}");
                     emptySlot.HoldItem(name, sprite);
                 }
             }

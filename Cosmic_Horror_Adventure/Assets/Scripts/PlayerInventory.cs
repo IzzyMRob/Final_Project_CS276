@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Assets.WUG.Scripts;
+using TMPro;
 using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
@@ -14,7 +15,7 @@ public class PlayerInventory : MonoBehaviour
         InventoryUIController = UserInterface.GetComponent<InventoryUIController>();
     }
 
-    public void Add(string name, Sprite sprite)
+    public void Add(string name, Sprite sprite, int value)
     {
         HeldItems.Add(name, sprite);
     }

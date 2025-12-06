@@ -38,7 +38,6 @@ namespace Assets.WUG.Scripts
 
         public void HoldItem(string name, Sprite sprite)
         {
-            Debug.Log("HoldItem Called for: " + name);
             ItemGuid = name;
             Icon.sprite = sprite;
             Text.text = name;
