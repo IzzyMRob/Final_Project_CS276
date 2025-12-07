@@ -1,6 +1,7 @@
 using System.Collections;
 using Assets.WUG.Scripts;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using UnityEngine.InputSystem;
 using Unity.VisualScripting;
@@ -13,16 +14,21 @@ public class UIController : MonoBehaviour
     private GameObject DarkOverlay;
     private GameObject InventoryUI;
     private GameObject PauseUI;
+    public GameObject ControlsUI;
     private GameObject ScreamingFrogLogo;
-    private GameObject IntroText;
+    private GameObject IntroText;    
+
     
     void Start()
     {
+        // grab all elements from their parents
         DarkOverlay = Canvas.transform.GetChild(0).gameObject;
         InventoryUI = Canvas.transform.GetChild(1).gameObject;
         PauseUI = Canvas.transform.GetChild(2).gameObject;
+        ControlsUI = Canvas.transform.GetChild(3).gameObject;
         ScreamingFrogLogo = StartingScenes.transform.GetChild(0).gameObject;
         IntroText = StartingScenes.transform.GetChild(1).gameObject;
+        // play the starting scenes, this is a timed function
         PlayStartingScenes();
     }
 
@@ -61,18 +67,45 @@ public class UIController : MonoBehaviour
 
     private void PlayStartingScenes()
     {
-        Debug.Log("PlayStartingScenes called");
+        // coroutine so we can make it wait for seconds
         StartCoroutine(TimedStartingScenes());
     }
 
     IEnumerator TimedStartingScenes()
     {
-        Debug.Log("EnumeratorEntered");
+        // show studio logo then intro story
         ScreamingFrogLogo.SetActive(true);
         yield return new WaitForSeconds(3);
         ScreamingFrogLogo.SetActive(false);
         IntroText.SetActive(true);
         yield return new WaitForSeconds(15);
         IntroText.SetActive(false);
+    }
+
+    public void ResumeButtonCallback()
+    {
+        // callback for resume function
+        Debug.Log("Resume Callback");
+        TogglePause();
+    }
+
+    public void ControlsButtonCallback()
+    {
+        Debug.Log("Controls Callback");
+        // if active deactivate
+        if (ControlsUI.activeSelf)
+        {
+            ControlsUI.SetActive(false);
+        // if inactive activate
+        } else
+        {
+            ControlsUI.SetActive(true);
+        }
+    }
+
+    public void RestartButtonCallback()
+    {
+        Debug.Log("Restart Callback");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
