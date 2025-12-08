@@ -6,6 +6,7 @@ public class Pickup : Interactable
 {
     public string Name;
     public Sprite sprite;
+    public GameObject PickupAudioSource;
     public int value;
 
     public override void Use()
@@ -13,6 +14,7 @@ public class Pickup : Interactable
         // remove object from world, add to player inventory
         PlayerObj.GetComponent<PlayerInventory>().Add(Name, sprite, value);
         Destroy(gameObject);
+        PickupAudioSource.GetComponent<AudioSource>().Play();
     }
 
     public override void GetSpecificValues() {}

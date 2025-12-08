@@ -6,6 +6,7 @@ public class Door : Interactable
 
     public GameObject Connection;
     public string Required;
+    public GameObject DoorCloseAudioSource;
     private PlayerInventory Inventory;
     private GameObject NoMessage;
 
@@ -26,6 +27,7 @@ public class Door : Interactable
         } else {
             StartCoroutine(ShowNoMessage());
         }
+        DoorCloseAudioSource.GetComponent<AudioSource>().Play();
     }
 
     public override void ProximityTurnOff()
